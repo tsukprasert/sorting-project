@@ -1,0 +1,28 @@
+# given class, utilize this in the main file 
+class Song:
+
+    """
+    Intial function for Song object. 
+    parse a given songRecord string to song object.
+    For an example songRecord such as "0,Qing Yi Shi,Leon Lai,203.38893,5237536"
+    It contains attributes (ID, title, artist, duration, trackID)
+    """
+    def __init__(self, info):
+        id, title, artist, duration, trackid  = info.split(',')
+        self.id = id
+        self.title = title
+        self.artist = artist
+        self.duration = duration
+        self.trackid = trackid
+
+
+    def toString(self):
+        return "Title: " + self.title + ";  Artist: " + self.artist
+
+
+# WRITE YOUR OWN TEST UNDER THAT IF YOU NEED
+if __name__ == '__main__':
+
+    sampleSongRecord = "0,Qing Yi Shi,Leon Lai,203.38893,5237536"
+    sampleSong = Song(sampleSongRecord)
+    print(sampleSong.toString())
